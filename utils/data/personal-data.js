@@ -1,17 +1,38 @@
 export const personalData = {
-  name: "ABU SAID",
-  profile: '/profile.png',
-  designation: "Software Developer",
-  description: "My name is ABU SAID. I am a professional and enthusiastic programmer in my daily life. I am a quick learner with a self-learning attitude. I love to learn and explore new technologies and am passionate about problem-solving. I love almost all the stacks of web application development and love to make the web more open to the world. My core skill is based on JavaScript and I love to do most of the things using JavaScript. I am available for any kind of job opportunity that suits my skills and interests.",
-  email: 'abusaid7388@gmail.com',
-  phone: '+8801608797655',
-  address: 'Middle Badda, Dhaka, Bangladesh - 1212 ',
-  github: 'https://github.com/said7388',
-  facebook: 'https://www.facebook.com/abusaid.riyaz/',
-  linkedIn: 'https://www.linkedin.com/in/abu-said-bd/',
-  twitter: 'https://twitter.com/said7388',
-  stackOverflow: 'https://stackoverflow.com/users/16840768/abu-said',
-  leetcode: "https://leetcode.com/said3812/",
-  devUsername: "said7388",
-  resume: "https://drive.google.com/file/d/1eyutpKFFhJ9X-qpQGKhUNnVRkB5Wer00/view?usp=sharing"
-}
+  name: 'Pallavi Kathait',
+  profile: '/profile.jpeg', // ensure this exists in /public
+  designation: 'Cybersecurity Enthusiast',
+
+  // Typing animation phrases (for your hero text rotator)
+  tags: [
+    'Cybersecurity Enthusiast',
+    'CTF Player',
+    'Bug Hunter',
+    'Full Stack Developer',
+  ],
+
+  description:
+    "Aspiring cybersecurity professional with a deep passion for exploring and securing digital systems. My main focus areas are cybersecurity and AI-powered full-stack development. I have hands-on experience with tools like SIEM, ELK Stack, Metasploitable, Nmap, Wireshark, and Burp Suite. Actively engaged in penetration testing, bug bounty programs, and CTF competitions, I am driven by a strong desire to become a cybersecurity professional. I don't just wish to be part of the cyber and digital world — I want to protect it and create a safe space for everyone. Driven by a strong desire to protect people and organizations from cyber threats.",
+
+  email: 'kathaitpallavi164@gmail.com',
+  phone: '+91 7453926025',
+  address: 'Srinagar Garhwal, Uttarakhand, India',
+
+  github: 'https://github.com/iceybubble',
+  linkedIn: 'https://www.linkedin.com/in/pallavikathait/',
+  twitter: 'https://x.com/maybe_priyanshi',
+  tryHackMe: 'https://tryhackme.com/dashboard',
+  youtube: 'https://www.youtube.com/@pallavikathait1672',
+  hashnode: 'https://hashnode.com/@iceybubble',
+
+  // Keep these (Hero renders icons from them). If you don't use them, keep as '#'
+  // so Next <Link> doesn't crash with an empty string.
+  facebook: '#',
+  leetcode: '#',
+  stackOverflow: '#',
+
+  devUsername: 'iceybubble',
+
+  // add later
+  resume: '#',
+};

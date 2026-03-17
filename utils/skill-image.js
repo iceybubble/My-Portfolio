@@ -82,6 +82,12 @@ import kubernetes from '../app/assets/svg/skills/kubernetes.svg'
 import linux from '../app/assets/svg/skills/linux.svg'
 import sqlalchemy from '../app/assets/svg/skills/sqlalchemy.svg'
 import fastapi from '../app/assets/svg/skills/fastapi.svg'
+import nmap from '../app/assets/svg/skills/nmap.svg';
+import wireshark from '../app/assets/svg/skills/wireshark.svg';
+import burpsuite from '../app/assets/svg/skills/burpsuite.svg';
+import metasploit from '../app/assets/svg/skills/metasploit.svg';
+import elk from '../app/assets/svg/skills/elk.svg';
+import siem from '../app/assets/svg/skills/siem.svg';
 
 
 
@@ -254,7 +260,19 @@ export const skillsImage = (skill) => {
       return sqlalchemy;
     case 'fastapi':
       return fastapi;
+    case 'nmap':
+      return nmap;
+    case 'wireshark':
+      return wireshark;
+    case 'burp suite':
+      return burpsuite;
+    case 'metasploit':
+      return metasploit;
+    case 'elk stack':
+  return elk;
+    case 'siem':
+      return siem;
     default:
-      break;
+      return null;
   }
 }
