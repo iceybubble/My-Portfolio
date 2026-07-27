@@ -143,13 +143,13 @@ body::after {
   letter-spacing: 0.2em;
   color: var(--c-mute);
   text-transform: uppercase;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
-.side-nav__list { display: flex; flex-direction: column; gap: 6px; flex: 1; width: 100%; align-items: center; }
+.side-nav__list { display: flex; flex-direction: column; gap: 4px; flex: 1; width: 100%; align-items: center; overflow-y: auto; }
 .side-nav__link {
   position: relative;
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -157,15 +157,15 @@ body::after {
   color: var(--c-mute);
   transition: all var(--t-base) var(--ease-smooth);
 }
-.side-nav__link svg { width: 20px; height: 20px; stroke-width: 1.5; }
+.side-nav__link svg { width: 19px; height: 19px; stroke-width: 1.5; }
 .side-nav__link:hover { color: var(--c-gold); background: rgba(212, 165, 116, 0.08); }
 .side-nav__link.is-active { color: var(--c-gold); background: rgba(212, 165, 116, 0.14); }
 .side-nav__link.is-active::before {
   content: '';
   position: absolute;
   left: -1px;
-  top: 14px;
-  bottom: 14px;
+  top: 12px;
+  bottom: 12px;
   width: 3px;
   border-radius: 0 2px 2px 0;
   background: var(--c-gold);
@@ -199,6 +199,7 @@ body::after {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   text-transform: uppercase;
+  margin-top: 8px;
 }
 
 /* ---------- Mobile Top Nav ---------- */
@@ -245,12 +246,13 @@ body::after {
   padding: 32px 24px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
   z-index: 99;
   transform: translateY(-100%);
   opacity: 0;
   pointer-events: none;
   transition: all 0.35s var(--ease-quart);
+  overflow-y: auto;
 }
 .mobile-drawer.is-open {
   transform: translateY(0);
@@ -259,10 +261,10 @@ body::after {
 }
 .mobile-drawer a {
   font-family: var(--font-serif);
-  font-size: 24px;
+  font-size: 22px;
   color: var(--c-cream-2);
   border-bottom: 1px solid var(--c-border);
-  padding-bottom: 12px;
+  padding-bottom: 10px;
 }
 .mobile-drawer a:hover { color: var(--c-gold); }
 
@@ -503,7 +505,7 @@ body::after {
 }
 .hero-sig-num {
   font-family: var(--font-serif);
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 600;
   color: var(--c-gold);
   line-height: 1.1;
@@ -862,6 +864,52 @@ body::after {
 .project__links svg { width: 14px; height: 14px; }
 
 /* =====================================================================
+   SOCIAL WORK & NGO INTERNSHIPS SECTION
+   ===================================================================== */
+.social-work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+.social-card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  padding: 28px;
+  transition: all var(--t-base) var(--ease-smooth);
+}
+.social-card:hover {
+  border-color: var(--c-border-bright);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card-hover);
+}
+.social-card__badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--c-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+.social-card__title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  color: var(--c-cream);
+  margin-bottom: 4px;
+}
+.social-card__org {
+  font-size: 15px;
+  color: var(--c-warm);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.social-card__desc {
+  font-size: 14px;
+  color: var(--c-cream-2);
+  line-height: 1.6;
+}
+
+/* =====================================================================
    SKILLS & TOOLKIT SECTION (Viz Orbs + Categorized Lists)
    ===================================================================== */
 .skills-grid {
@@ -965,7 +1013,7 @@ body::after {
 }
 
 /* =====================================================================
-   CERTIFICATIONS & CREDENTIALS SECTION
+   CERTIFICATIONS & HONORS SECTION
    ===================================================================== */
 .cert-grid {
   display: grid;
@@ -1021,6 +1069,39 @@ body::after {
   gap: 6px;
 }
 .cert-card__verify svg { width: 14px; height: 14px; }
+
+/* =====================================================================
+   RÉSUMÉ VIEW & DOWNLOAD SECTION
+   ===================================================================== */
+.resume-box {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-xl);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+}
+.resume-box h3 {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  color: var(--c-cream);
+  margin-bottom: 12px;
+}
+.resume-box p {
+  font-size: 15px;
+  color: var(--c-warm);
+  max-width: 540px;
+  margin-bottom: 28px;
+}
+.resume-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 /* =====================================================================
    EDUCATION SECTION
@@ -1108,7 +1189,7 @@ body::after {
   line-height: 1.7;
   margin-bottom: 32px;
 }
-.contact-info { display: flex; flex-direction: column; gap: 16px; }
+.contact-info { display: flex; flex-direction: column; gap: 14px; }
 .contact-info a {
   display: flex;
   align-items: center;
@@ -1186,7 +1267,7 @@ body::after {
   margin-bottom: 20px;
   line-height: 1.6;
 }
-.footer-socials { display: flex; gap: 12px; }
+.footer-socials { display: flex; gap: 12px; flex-wrap: wrap; }
 .footer-socials a {
   width: 38px; height: 38px;
   border-radius: 50%;
