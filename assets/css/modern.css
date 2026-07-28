@@ -915,19 +915,19 @@ body::after {
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
+  gap: 16px;
   margin-bottom: 48px;
 }
 @media (max-width: 1024px) {
   .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   }
 }
 .skill-orb {
   background: var(--c-surface);
   border: 1px solid var(--c-border);
-  border-radius: var(--r-lg);
-  padding: 24px 16px 20px;
+  border-radius: var(--r-md);
+  padding: 18px 12px 14px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -938,19 +938,19 @@ body::after {
 }
 .skill-orb:hover {
   border-color: var(--c-border-bright);
-  transform: translateY(-4px);
-  box-shadow: 0 0 25px rgba(212, 165, 116, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(212, 165, 116, 0.15);
 }
 .skill-orb__circle {
-  width: 90px;
-  height: 90px;
+  width: 54px;
+  height: 54px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
-.skill-orb__circle svg {
+.skill-orb__circle svg.ring-svg {
   width: 100%;
   height: 100%;
   transform: rotate(-90deg);
@@ -960,16 +960,16 @@ body::after {
 .skill-orb__bg {
   fill: none;
   stroke: rgba(244, 236, 224, 0.08);
-  stroke-width: 5;
+  stroke-width: 3.5;
 }
 .skill-orb__meter {
   fill: none;
   stroke: var(--c-gold);
-  stroke-width: 5;
+  stroke-width: 3.5;
   stroke-linecap: round;
-  stroke-dasharray: 245;
-  stroke-dashoffset: 245;
-  filter: drop-shadow(0 0 5px rgba(212, 165, 116, 0.5));
+  stroke-dasharray: 138.2;
+  stroke-dashoffset: 138.2;
+  filter: drop-shadow(0 0 3px rgba(212, 165, 116, 0.4));
   transition: stroke-dashoffset 1.5s var(--ease-quart);
 }
 .skill-orb__icon {
@@ -981,21 +981,25 @@ body::after {
   z-index: 2;
 }
 .skill-orb__icon svg {
+  width: 24px !important;
+  height: 24px !important;
+  max-width: 24px !important;
+  max-height: 24px !important;
   transform: none !important;
   position: static !important;
 }
 .skill-orb__name {
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   color: var(--c-cream);
   text-transform: uppercase;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 .skill-orb__val {
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 500;
   color: var(--c-warm);
 }
