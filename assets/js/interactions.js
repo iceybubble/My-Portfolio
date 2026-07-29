@@ -102,10 +102,65 @@
     });
   }
 
+  // 5. Custom Cursor (Dot & Trailing Ring)
+  function initCustomCursor() {
+    if (window.matchMedia('(pointer: coarse)').matches) return;
+
+    var dot = document.createElement('div');
+    dot.className = 'custom-cursor__dot';
+    var ring = document.createElement('div');
+    ring.className = 'custom-cursor__ring';
+    document.body.appendChild(dot);
+    document.body.appendChild(ring);
+
+    var mouseX = -100, mouseY = -100;
+    var ringX = -100, ringY = -100;
+    var isHovered = false;
+
+    window.addEventListener('mousemove', function (e) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      dot.style.transform = 'translate3d(' + (mouseX - 3) + 'px, ' + (mouseY - 3) + 'px, 0)';
+    }, { passive: true });
+
+    function renderRing() {
+      ringX += (mouseX - ringX) * 0.18;
+      ringY += (mouseY - ringY) * 0.18;
+      var offset = isHovered ? 25 : 17;
+      ring.style.transform = 'translate3d(' + (ringX - offset) + 'px, ' + (ringY - offset) + 'px, 0)';
+      requestAnimationFrame(renderRing);
+    }
+    requestAnimationFrame(renderRing);
+
+    var selector = 'a, button, input, textarea, .btn, .side-nav__link, .card, .project-card, [role="button"]';
+    document.addEventListener('mouseover', function (e) {
+      if (e.target.closest(selector)) {
+        isHovered = true;
+        document.body.classList.add('cursor-hover');
+      }
+    });
+    document.addEventListener('mouseout', function (e) {
+      if (e.target.closest(selector)) {
+        isHovered = false;
+        document.body.classList.remove('cursor-hover');
+      }
+    });
+
+    document.addEventListener('mouseleave', function () {
+      dot.style.opacity = '0';
+      ring.style.opacity = '0';
+    });
+    document.addEventListener('mouseenter', function () {
+      dot.style.opacity = '1';
+      ring.style.opacity = '1';
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     initScrollReveal();
     initScrollSpy();
     initMobileDrawer();
     initMagneticHover();
+    initCustomCursor();
   });
 })();
